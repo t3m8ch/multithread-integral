@@ -15,7 +15,7 @@ print()
 
 for t in range(2, 33):
     a3 = time.time()
-    lib.process_multi(8)
+    lib.process_multi(t)
     b3 = time.time()
 
     print(f"{t} threads: " + str(b3 - a3))
