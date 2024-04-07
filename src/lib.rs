@@ -36,20 +36,16 @@ fn integral_multithreading(a: i32, b: i32, delta: f64, threads_count: i32) -> f6
   s
 }
 
+const A: i32 = 9;
+const B: i32 = 36;
+const DELTA: f64 = 0.0000001;
+
 #[no_mangle]
 pub extern fn process() {
-  let a: i32 = 9;
-  let b: i32 = 36;
-  let delta: f64 = 0.0000001;
-
-  println!("{}", integral(a.into(), b.into(), delta));
+  println!("{}", integral(A.into(), B.into(), DELTA));
 }
 
 #[no_mangle]
 pub extern fn process_multi(threads_count: i32) {
-  let a: i32 = 9;
-  let b: i32 = 36;
-  let delta: f64 = 0.0000001;
-
-  println!("{}", integral_multithreading(a, b, delta, threads_count));
+  println!("{}", integral_multithreading(A, B, DELTA, threads_count));
 }
